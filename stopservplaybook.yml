@@ -1,0 +1,13 @@
+---
+- name: stoping the httpd and smb service
+  hosts: all
+  vars:
+    stoping_services:
+      - httpd
+      - smb 
+  tasks:
+  - name: stoping the httpd service
+    service:
+      name: "{{ item }}"
+      state: stoped
+    loop: "{{ stoping_servies }}"

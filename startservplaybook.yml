@@ -1,0 +1,13 @@
+---
+- name: starting the httpd and smb service
+  hosts: all
+  tasks:
+  - name: starting the httpd service
+    service:
+      name: httpd
+      state: started
+
+  - name: starting the samba service
+    service:
+      name: smb
+      state: started

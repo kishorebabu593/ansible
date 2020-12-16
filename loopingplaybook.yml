@@ -1,0 +1,15 @@
+---
+- name: package installation
+  hosts: all
+  vars:
+    pkgs:
+      - python
+      - git
+
+  tasks:
+  - name: install pkg
+    yum:
+      name: "{{ item }}"
+      state: present
+
+    loop: "{{ pkgs }}"
